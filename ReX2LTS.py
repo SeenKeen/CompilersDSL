@@ -181,7 +181,7 @@ class Concat(ReX):
 # Function to solve problem
 #
 # @param ReX object
-# @return
+# @return created LTS
 def ReX2LTS(regex: ReX):
     return regex.assemble_lts()
 
