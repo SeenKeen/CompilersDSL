@@ -189,7 +189,7 @@ def ReX2LTS(regex: ReX):
 # ReX accepts arbitrary combinations of "aa" and "b"
 re = Repeat(Alter(Concat(Just('a'), Just('a')), Just('b')))
 print("1. ReX accepts arbitrary combinations of \"aa\" and \"b\":")
-
+print(re)
 re_lts = ReX2LTS(re)
 for s in ["aab", "aabaa", "aaa", "aac", ""]:
     print("Accepts " + s + " ? : " + ("YES" if re_lts.accept(s) else "NO"))
@@ -197,7 +197,7 @@ for s in ["aab", "aabaa", "aaa", "aac", ""]:
 # ReX accepts non-decreasing successions of 1, 2 and 3
 re = Concat(Concat(Repeat(Just('1')), Repeat(Just('2'))), Repeat(Just('3')))
 print("2. ReX accepts non-decreasing successions of 1, 2 and 3:")
-
+print(re)
 re_lts = ReX2LTS(re)
 for s in ["123", "1122233", "321", "1111"]:
     print("Accepts " + s + " ? : " + ("YES" if re_lts.accept(s) else "NO"))
